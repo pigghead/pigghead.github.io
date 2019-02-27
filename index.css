@@ -1,47 +1,20 @@
-/* Set everything to zero */
 * {
     margin: 0;
     padding: 0;
 }
 
-/********/
-/* HOME */
-/********/
-
-/********/
-/* BODY */
-/********/
-.MAIN-CONTENT-CONTAINER {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+body {
+    background-image: url(Untitled-1.svg); 
+    background-size: cover;   
 }
 
-.SIDEBAR {
-    border-right: 1px solid grey;
-    flex: 0.5 3;
-    margin-left: 1em;
+#bg-element {
+    background-size: cover;
+    height: 100%;
 }
 
-.MAIN-CONTENT {
-    width: 78%;
-    margin-left: 1em;
-}
-
-.MC-ITEM {
-    border: 1px solid yellow;
-    font-size:larger;
-}
-
-
-/*********/
-/* EXTRA */
-/*********/
-.APPLY-FONT1 {
-        font-family: 'Raleway', sans-serif;
-        font-size: 28px;
-}
-
-.materials-icons.white {
-    color: white;
+#example-hover {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
 }
