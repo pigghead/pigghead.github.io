@@ -4,8 +4,19 @@
 }
 
 body {
-    background-image: url(Untitled-1.svg); 
-    background-size: cover;   
+    /*background-image: url(Untitled-1.svg); 
+    background-size: cover;*/
+    background-color: bisque
+}
+
+canvas {
+    margin: 0 auto;
+    background: #cccccc;
+    opacity: 50%;
+}
+
+canvas:hover {
+    cursor: crosshair;
 }
 
 #bg-element {
@@ -13,8 +24,44 @@ body {
     height: 100%;
 }
 
-#example-hover {
-    height: 100%;
+.reset-button {
+    color: white;
+    border: none;
+    background-color: red;
+    display: inline-block;
+    padding: 15px 24px;
+    width: 8%;
+    text-align: center;
+}
+
+.reset-button:hover {
+    opacity: 0.85;
+    cursor: grab;
+}
+
+.row {
+    border: 1px solid black;
+}
+
+.column {
     width: 100%;
-    background-color: orange;
+}
+
+.column img {
+    width: 12%;
+    opacity: 0.8;
+}
+
+.column img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.flex-container {
+    border: 3px solid orange;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
