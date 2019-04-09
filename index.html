@@ -1,142 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <title>untitled-construction</title>
+<title>example</title>
+    <link rel="stylesheet" href="main.css">
+    <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </nav>
+    <button><h3>Click Me</h3></button>
+    <div id="content-break"></div>
 </head>
-<body onload="startGame()">
-    <!-- Create a table utilizing div tags as opposed to the actual table call -->
-    <div class="row">
-        <div class="column">
-            <img src="Media/CCCCCC-PH-150.png">
-            <img src="Media/CCCCCC-PH-150.png">
-            <img src="Media/CCCCCC-PH-150.png">
-        </div>
+<body>
+    <!-- Do one big picture that, as you start to scroll up, ends up "collapsing" into the nav bar." -->
+    <!-- img src="Media/Untitled-1.svg" -->
+    <!-- <img src="#" alt="screenshot-gallery">
+    <h3>Description for item 1</h3> -->
+    <div>
+        <h2>DESIGNER</h2>
+        <h2>DEVELOPER</h2>
+        <h2>PHOTOGRAPHER</h2>
+        <h2>DREAMER</h2>
     </div>
-    <div class="flex-container">
-        <canvas width="600px" height="600px" id="game-canvas">
-            
-        </canvas>
-        <button class="reset-button" onclick="startGame()">RESET</button>
-    </div>
-    <script>
-        var canvas = document.getElementById("game-canvas");
-        var ctx = canvas.getContext("2d");
-        
-        ctx.font = "22px arial";
-        ctx.textAlign = "center";
-        ctx.fillText("Welcome to a puzzle game", canvas.width / 2, 25);
-        
-        // Start the game in its entirety
-        function startGame() {
-            myGameComponent = new createComponent(25, 25, "blue", 50, 50);
-            myGameArea.start();
-        }
-        
-        function resetGame() {
-            console.log("Resetting canvas...")
-            startGame();
-        }
-        
-        var myGameArea = {
-            canvas : document.getElementById("game-canvas"),
-            start : function() {
-                this.context = ctx;
-                this.interval = setInterval(updateGameArea, 20);
-            },
-            clear : function() {
-                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-            }
-        }
-        
-        // This will create a random game peice somewhere on the canvas.
-        function createComponent(width, height, color, x, y) {
-            this.width = width;
-            this.height = height;
-            this.color = color;
-            this.speedX = 0;
-            this.speedY = 0;
-            this.x = x;
-            this.y = y;
-            this.update = function() {
-                ctx = myGameArea.context;
-                ctx.fillStyle = color;
-                ctx.fillRect(this.x, this.y, this.width, this.height);
-                //myGameComponent.x += 1;
-            }
-            this.newPos = function() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-            }
-            this.speedClamp = function() {
-                if(myGameComponent.speedX > 1)
-                    myGameComponent.speedX = 1;
-                if (myGameComponent.speedX < 0)
-                    myGameComponent.speedX = -1;
-                if(myGameComponent.speedY > 1)
-                    myGameComponent.speedY = 1;
-                if(myGameComponent.speedY < 0)
-                    myGameComponent.speedY = -1;
-            }
-        }
-        
-        function updateGameArea() {
-            myGameArea.clear();
-            myGameComponent.newPos();
-            myGameComponent.speedClamp();
-            myGameComponent.update();
-            console.log("X-speed: " + myGameComponent.speedX + " Y-speed: " + myGameComponent.speedY);
-        }
-        
-        // Movement function(s)
-        function moveLeft() {
-            myGameComponent.speedX -= 1;
-        }
-        function moveRight() {
-            myGameComponent.speedX += 1;
-        }
-        function moveUp() {
-            myGameComponent.speedY -= 1;
-        }
-        function moveDown() {
-            myGameComponent.speedY += 1;
-        }
-        function moveStop() {
-            myGameComponent.speedX = 0;
-            myGameComponent.speedY = 0;
-        }
-        
-        // Speed clamp function
-        /*function speedClamp() {
-            if(myGameComponent.speedX > 1)
-                myGameComponent.speedX = 1;
-            if (myGameComponent.speedX < 0)
-                myGameComponent.speedX = -1;
-            if(myGameComponent.speedY > 1)
-                myGameComponent.speedY = 1;
-            if(myGameComponent.speedY < 0)
-                myGameComponent.speedY = -1;
-        }*/
-        
-        // Keyboard listener function
-        document.onkeydown = function keyListener(event) {
-            event = event || window.event;
-            var key = event.key || event.which || event.keyCode;
-            if(key == 'a') {
-                moveLeft();
-            } else if(key == 'd') {
-                moveRight();
-            } else if(key == 'w') {
-                moveUp();
-            } else if(key == 's') {
-                moveDown();
-            }
-        }
-        
-    </script>
 </body>
-</html>
+<footer>
+    <h4>Footer Content goes here</h4>
+</footer>
